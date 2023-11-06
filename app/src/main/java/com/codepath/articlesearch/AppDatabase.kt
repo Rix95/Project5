@@ -6,10 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [ArticleEntity::class], version = 1)
+@Database(entities = [WaterEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun articleDao(): ArticleDao
+    abstract fun waterDao(): WaterDao
 
     companion object {
 
@@ -24,7 +24,7 @@ abstract class AppDatabase : RoomDatabase() {
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
-                AppDatabase::class.java, "Articles-db"
+                AppDatabase::class.java, "Waters-db"
             ).build()
     }
 }
